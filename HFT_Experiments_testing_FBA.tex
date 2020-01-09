@@ -25,24 +25,25 @@
   {}{}
 \makeatother
 
-\AtBeginSection[]
-{
-  \begin{frame}<beamer>
-    \frametitle{Topics}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
-}
+%
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Topics}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+%
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Topics}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
 
-\AtBeginSubsection[]
-{
-  \begin{frame}<beamer>
-    \frametitle{Topics}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
-}
 
-
-\title[Market Design Exp. Finance]{Market Design in Experimental Finance}
+\title[Market Design - Experiments - Finance]{Experiments in Market Design: Finance Applications}
 \author[L\'opez Vargas]{Kristian L\'opez Vargas\inst{1}}
 \institute[UCSC]{\inst{1} Economics Department, University of California, Santa Cruz  }
 \useoutertheme{infolines}
@@ -53,40 +54,46 @@
 
 \hypertarget{start}{}
 
+
+
 \frame{\titlepage} 
 
-\section{Summary}
-\frame{\frametitle{One-Slide Summary}
-\begin{itemize}
-\item \textbf{Introduction}: 
-\begin{enumerate}
-    \item Basics on Market Design
-    \item Three Main Advances
-    \item Sniping in non-financial contexts
-\end{enumerate}
-% \pause
 
-\item \textbf{Market design in Financial Markets}: 
-\begin{enumerate}
-    \item High Frequency Trading (HFT)
-    \item Algorithmic Trading
-    \item Consequences of the Market Design
-\end{enumerate}
-% \pause
 
-\item \textbf{Alternatives for the Standard Financial Market Designs}:
 
-\begin{enumerate}
-    \item Speed Bumps
-    \item Frequent Batch Auctions
-    \item Continuous Scaled Limit Orders
-\end{enumerate}
+%\frame{\frametitle{One-Slide Summary}
+%\begin{itemize}
+%\item \textbf{Introduction}: 
+%\begin{enumerate}
+%    \item Basics on Market Design
+%    \item Three Main Advances
+%    \item Sniping in non-financial contexts
+%\end{enumerate}
+%% \pause
+%
+%\item \textbf{Market design in Financial Markets}: 
+%\begin{enumerate}
+%    \item High Frequency Trading (HFT)
+%    \item Algorithmic Trading
+%    \item Consequences of the Market Design
+%\end{enumerate}
+%% \pause
+%
+%\item \textbf{Alternatives for the Standard Financial Market Designs}:
+%
+%\begin{enumerate}
+%    \item Speed Bumps
+%    \item Frequent Batch Auctions
+%    \item Continuous Scaled Limit Orders
+%\end{enumerate}
+%
+%\end{itemize}
+%}
+%
 
-\end{itemize}
-}
 
 \section{Introduction}
-\frame{\frametitle{Basics on Market Design}
+\frame{\frametitle{Intro: Market Design}
 \begin{itemize}
     \item By \textbf{market design}, we are talking about the institutions and allocation rules of many economic environments
     \begin{enumerate}
@@ -100,7 +107,8 @@
         \item[-] Tradable permit systems for pollution abatement and other environmental regulations
         \item[-] Online reputation and feedback systems
     \end{itemize}
-    \item How can we \textbf{research} about them?: Observing the \textbf{performance} of a new market design on simple situations created in the \textbf{lab}
+    \item How can we \textbf{research} about them?: Observing the \textbf{performance} of a new market design on simple environments created in the \textbf{lab}. 
+    \item Validation in the field is often necessary.
 \end{itemize}
 }
 
@@ -137,20 +145,28 @@
 \frame{\frametitle{Three Main Advances 2}
 \textbf{Behavioral Economics}:
 \begin{itemize}
-    \item Kahneman and Tversky (1979): two central aspects of choice under uncertainty: loss aversion and the probability weighting function
-    \item Kahneman and Lovallo (1993): “isolation errors”, whereby people tend to treat risky prospects separately rather than together, as the third component in risky choice
-    \item Application in the context of managerial decision-making (e.g., the pervasiveness of small-scale insurance policies and the equity premium puzzle)
-    \item Thaler and Johnson (1990):
-    \begin{enumerate}
-        \item “House money effect”, whereby decision makers become more risk seeking in the presence of a prior gain
-        \item “Break-even effects”, whereby, in the presence of prior losses, outcomes which offer a chance to break even are especially attractive
-    \end{enumerate}
+    \item A body of empirical knowledge (and theoretical modeling) on how people actually make decisions.
+    \item Kahneman and Tversky (1979): two central aspects of choice under uncertainty: loss aversion and the probability weighting function.
+    \item People have limited cognitive resources
+    \item People care about others
+    \item People have self control problems and some are aware of their issue.
+    \item Human often judge risky prospects in isolation (in contrast to what standard theory predicts).
+    \item And 800 other deviations from the standard "econonomic agent". 
+%    \item Kahneman and Lovallo (1993): “isolation errors”, whereby people tend to treat risky prospects separately rather than together, as the third component in risky choice
+%    \item Application in the context of managerial decision-making (e.g., the pervasiveness of small-scale insurance policies and the equity premium puzzle)
+%    \item Thaler and Johnson (1990):
+%    \begin{enumerate}
+%        \item “House money effect”, whereby decision makers become more risk seeking in the presence of a prior gain
+%        \item “Break-even effects”, whereby, in the presence of prior losses, outcomes which offer a chance to break even are especially attractive
+%    \end{enumerate}
 \end{itemize}
 }
 
 \frame{\frametitle{Three Main Advances 3}
 \textbf{Laboratory Experiments}:
 \begin{itemize}
+    \item Robinson 40s
+    \item Vernon Smith 60s - 90s    
     \item Katok and Roth (2004) investigate in the laboratory the performance of two “Dutch” auctions for selling multiple homogenous objects:
     \begin{enumerate}
         \item the ascending auctions used in eBay, and
@@ -162,28 +178,33 @@
 \end{itemize}
 }
 
-\frame{\frametitle{Sniping in non-financial contexts 1}
+\section{Timing and Sniping}
+
+\frame{\frametitle{Today's Discussion: Timing and Sniping}
 \begin{itemize}
     \item One area of market design research is concerned with the strategic timing of interaction.
     \item In matching markets, Roth and his coauthors develop mechanisms that address problems arising from incentives to act earlier than others.
     \item Competition for people and positions in various job markets led to very early dates of appointment
     \item For example, in some job markets, students were being hired before useful information about their performance was available and before the students themselves could develop informed career preferences.
-    \item Timing is also an important aspect of strategic behavior in auction markets. A strategy called \textbf{“sniping”} is prevalent in many auction market environments, hampering the efficiency of trade.
+    \item Timing is also an important aspect of strategic behavior in auction markets. A strategy called \textbf{“sniping”} is prevalent in many auction markets, hampering the efficiency of trade.
 \end{itemize}
 }
 
-\frame{\frametitle{Sniping in non-financial contexts 2}
+\frame{\frametitle{Today's Discussion: Timing and Sniping}
 \textbf{Online auctions}:
 \begin{itemize}
     \item Online auctions for consumer goods are often run in continuous time.
-    \item The simplest rule for ending such auctions is a fixed end time, as employed by eBay.
+    \item The simplest rule for ending such auctions is a fixed end time, as employed by eBay (hard close).
     \item On eBay, a substantial fraction of bidders tends to submit their bids in the closing seconds of an auction, which is called “sniping”.
     \item Bidding is different on other platforms such as those formerly run by Amazon.
-    \item Amazon auctions were automatically extended if necessary past the scheduled end time until 10 minutes passed without a bid.
+    \item Amazon auctions were automatically extended (if necessary past the scheduled end time) until 10 minutes passed without a bid. This was called soft close.
+    \item Ebay auction generates a lot more sniping behavior.
+    \item Otherwise nearly identical auctions generate very different behavior among bidders, and market performance.
+
 \end{itemize}
 }
 
-\frame{\frametitle{Sniping in non-financial contexts 3}
+\frame{\frametitle{Today's Discussion: Timing and Sniping}
 \begin{figure}
 \includegraphics[width=0.9\textwidth]{img/eBay_auctions.PNG}
 \end{figure}
@@ -191,12 +212,15 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Market Design in Financial Markets}
+\section{Financial Market Design}
 
-\frame{\frametitle{Market Design in Financial Markets 1}
+\frame{\frametitle{Financial Market Design}
 \begin{itemize}
+    \item Technology brings many good opportunities (e.g. computation, communication, information-based markets).
+    \item ...But ot also brings many challenges to the design of institutions.
+     \item In finance, technology has these prevalent practices:
     \item \textbf{HFT}: Trading that uses powerful computers to transact a large number of orders within fractions of a second (more than 50\% of traded volume worldwide).
-    \item \textbf{Algorithmic Trading}: Decisions are \textbf{encoded} into algorithms which act on their behalf by communicating with the exchange as market conditions change.
+    \item \textbf{Algorithmic Trading}: Decisions are \textbf{encoded} into algorithms which act on their behalf by communicating directly with the exchange as market conditions change.
 \end{itemize}
 }
 
